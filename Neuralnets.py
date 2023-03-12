@@ -1,11 +1,13 @@
 import numpy as np
+import nnfs
+
 
 np.random.seed(0)
-
 
 X =    [[1,2,3,2.5],
         [2.0,5.0,-1.0,2.0],
         [-1.5,2.7,3.3,-0.8]]
+
 
 class Dense_Layer:
     def __init__(self,n_inputs,n_neurons) :
@@ -13,6 +15,11 @@ class Dense_Layer:
         self.biases = np.zeros((1,n_neurons))
     def forward(self,inputs):
         self.output = np.dot(inputs,self.weights) + self.biases
+
+class Activation_RELU:
+    def forward(self,inputs):
+        self.output = np.maximum(0,input)
+
 
 layer1 = Dense_Layer(4,5)
 layer2 = Dense_Layer(5,1)
