@@ -1,7 +1,6 @@
 import numpy as np
 import nnfs
 
-
 np.random.seed(0)
 
 X =    [[1,2,3,2.5],
@@ -32,7 +31,6 @@ print(layer2.output)
 
 
 # print(0.1*np.random.randn(4,3))
-
 # weights = [[0.2,0.8,-0.5 ,1.0],
 #           [0.5,-0.91,0.26,-0.5],
 #           [-0.26,-0.27,0.17,0.87]]
@@ -42,6 +40,5 @@ print(layer2.output)
 #             [-0.44,0.73,-0.13]]
 # bias2 = [-1,2,-0.5]
 # layer1_output = np.dot(inputs,np.array(weights).T) + bias
-
 # layer2_output = np.dot(layer1_output,np.array(weights2).T) + bias2
 # print(layer2_output)
