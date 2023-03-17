@@ -1,12 +1,15 @@
 import numpy as np
 import nnfs
+from nnfs.datasets import spiral_data
 
-np.random.seed(0)
+nnfs.init()
+
 
 X =    [[1,2,3,2.5],
         [2.0,5.0,-1.0,2.0],
         [-1.5,2.7,3.3,-0.8]]
 
+X , y = spiral_data(100,3)
 
 class Dense_Layer:
     def __init__(self,n_inputs,n_neurons) :
@@ -17,16 +20,16 @@ class Dense_Layer:
 
 class Activation_RELU:
     def forward(self,inputs):
-        self.output = np.maximum(0,input)
+        self.output = np.maximum(0,inputs)
 
 
-layer1 = Dense_Layer(4,5)
-layer2 = Dense_Layer(5,1)
+layer1 = Dense_Layer(2,5)
+Actn1 = Activation_RELU()
 
 layer1.forward(X)
-# print(layer1.output)
-layer2.forward(layer1.output)
-print(layer2.output)
+
+Actn1.forward(layer1.output)
+print(Actn1.output,end=",")
         
 
 
